@@ -127,7 +127,7 @@ programming ability, should find it helps clarify their
 current understanding of instruction processors, and supports
 their learning through the rest of this module.
 
-Guidance on instructions
+Instructions
 ------------------------
 
 We are going to look at the MIPS-1 (or MIPS-I) instruction
@@ -195,107 +195,8 @@ SW    |  Store word                               | 2  XX
 XOR   |  Bitwise exclusive or                     | 1  X        
 XORI  |  Bitwise exclusive or immediate           | 2  XX       
 
-This is a not-quite an exhaustive list of MIPS-1 instructions.
-Any instruction not covered in this list will not be tested
-as part of the assessment, and any implementation defined
-behaviour is fine (return an error, or actually implement
-the instruction).
 
-There are many instructions, but there is a lot of commonality
-between some instructions. Think about the underlying
-digital data-path in a real processor, and use that to identify
-where there are similarities. 
-
-You may get to the point where things start getting very boring,
-and you seem to be doing the same thing over and over, possibly
-by copying and pasting. This is generally an indication that you
-are missing an opportunity to abstract or automate. For example,
-how different are "and", "or", and "xor"? What is the shared
-functionality between "lb", "lw", and "lh"? You may want to
-re-factor your code every once in a while as you work out better
-ways of testing them - the purpose of your test-bench is to
-give you the confidence to do that.
-
-As you move through the instructions you should find that
-you have to think carefully about the first instruction of each type,
-deciding how to implement and test it. The next of the same
-type should be much quicker, then the next almost mechanical, 
-and you'll probably find two-thirds of the instructions are
-done in a minute each. However, you should still expect this to
-take a substantial amount of time, particularly if you plan to do
-all instructions.
-
-I would expect most people to be able to implement and test all
-the 1s and 2s fairly easily. Implementing the 3s is not so
-difficult, but testing them can be more complex. The 4s are doable,
-but have some complexity in implementation and testing. Implementing
-the 5s correctly is really quite challenging.
-
-Getting Started
----------------
-
-### Read this document
-
-You have got to this point already. If you skipped to here, go back
-and read the entire thing again.
-
-### Get the source code
-
-You can get the source code either by:
-
-1. Downloading the zip file (see the link on the right hand side),
-   which gives you a snapshot of the files in the repository.
- 
-2. Cloning the source code to your local directory, keeping the
-   git information intact. You don't need a github account to do
-   this, and your repository will be private.
-
-3. Fork the code into your own repository. This assumes that you
-   have your own account, and presumably the ability to keep
-   that repository private. See the [Student Pack](https://education.github.com/pack)
-   if you're interested in that direction.
-
-While it is not required, I would highly recommend that you try
-option 2 (I will use this route in class), and option 3 is even better.
-It is good to get some experience of how source control works,
-and acting as a consumer is a good way of understanding what is going on.
-There are a number of GUI tools available which make things easier:
-
- - The github GUI is available for [Windows](https://windows.github.com/),
-    [Mac](https://mac.github.com/).
-    
- - There are third party GUI tools like [TortoiseGIT](https://code.google.com/p/tortoisegit/)
- 
- - There is a default GUI called [git gui](https://www.kernel.org/pub/software/scm/git/docs/git-gui.html)
-   from the main git people, that should be cross platform.
-
- - Or you can just use the command line. If you are only using git
-   to get and update the code, then "git clone" and "git pull" are
-   easy to use.
-
-The submission itself is through blackboard as a zip, so there
-is no requirement to use git. Even if I update the repository,
-you can still just download the zip again and copy your current
-work in - it is deliberately designed so that copying your
-`src/<login>` directory into the updated source code will work.
-
-### Read the source code
-
-The source code is part of the specification, and is heavily
-documented (it is much more important to document APIs than
-it is to document implementation). Suggested reading order is:
-
- - `include/mips.h`
- - `include/mips_mem.h`
- - `include/mips_cpu.h`
- - `include/mips_test.h`
-
-*Optional*: The comments follow the format for a well-known tool
-called [doxygen](http://www.stack.nl/~dimitri/doxygen/). If you
-apply doxygen to the file `doc/mips.doxygen`, then it will generate
-some nice html formatted API documentation for you.
-
-### Check you understand MIPS
+### MIPS
 
 The ISA we are using is a subset of the MIPS-1 (or MIPS-I)
 instruction set in big endian mode. There is a lot of
